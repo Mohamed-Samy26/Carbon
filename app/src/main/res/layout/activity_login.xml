@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".screens.authentication.LoginActivity">
+
+    <EditText
+        android:layout_width="@dimen/_160sdp"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_phone"
+        android:hint="Phone"
+        android:inputType="phone"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_240sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_button"
+        android:text="login"
+        android:layout_gravity="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:gravity="center">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="don't have an account? "
+        />
+
+        <TextView
+
+            android:id="@+id/to_register_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="register now!"
+            android:textColor="#0000ff"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</LinearLayout>

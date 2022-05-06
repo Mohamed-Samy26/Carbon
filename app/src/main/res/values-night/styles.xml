@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="roundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">26dp</item>
+    </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#696969</item>
+        <item name="colorPrimaryDark">#434343</item>
+        <item name="colorAccent">#67ffaa</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:layoutDirection">ltr</item>
+    </style>
+    <style name="AppTheme.NObar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">#696969</item>
+        <item name="colorPrimaryDark">#434343</item>
+        <item name="colorAccent">#67ffaa</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:layoutDirection">ltr</item>
+    </style>
+</resources>

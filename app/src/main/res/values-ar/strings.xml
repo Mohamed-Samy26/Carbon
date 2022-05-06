@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">نتكلم</string>
+    <string name="tab_text_1">المحادثات</string>
+    <string name="tab_text_2">الحالات</string>
+    <string name="tab_text_3">المجموعات</string>
+    <string name="add_chat">إضافة محادثة</string>
+    <string name="save_phone_contact">حفظ الواجهة</string>
+    <string name="phone">الهاتف</string>
+    <string name="name">الإسم</string>
+    <string name="open_add">إضافة</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="message_should_be_displayed_here" translatable="false">Message should be displayed here</string>
+    <string name="app_name">Chatty</string>
+    <string name="tab_text_1">Chats</string>
+    <string name="tab_text_2">Status</string>
+    <string name="tab_text_3">Groups</string>
+    <string name="add_chat">Add Chat</string>
+    <string name="save_phone_contact">Save Contact</string>
+    <string name="phone">Phone</string>
+    <string name="name">Name</string>
+    <string name="open_add">Add</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
