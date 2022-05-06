@@ -32,9 +32,6 @@
             android:name=".screens.chat.VideoActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.chat.ChatActivity"
-            android:exported="false" />
-        <activity
             android:name=".screens.status.AddTextStory"
             android:exported="false" />
         <activity

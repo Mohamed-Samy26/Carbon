@@ -6,7 +6,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -17,14 +16,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.datastructures.chatty.R;
 import com.datastructures.chatty.adapters.MessageAdapter;
-import com.datastructures.chatty.screens.chat.ChatActivity;
 import com.datastructures.chatty.screens.chat.VideoActivity;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.SetOptions;
-
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
