@@ -1,48 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_drawable_light"
     android:orientation="vertical"
-    tools:context=".screens.authentication.LoginActivity">
+    android:padding="10dp"
+    tools:context=".screens.authentication.LoginFormActivity">
 
-    <EditText
-        android:layout_width="@dimen/_160sdp"
-        android:layout_height="wrap_content"
-        android:id="@+id/login_phone"
-        android:hint="Phone"
-        android:inputType="phone"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/_240sdp"
-        android:layout_marginBottom="@dimen/_30sdp"
-        />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/login_button"
-        android:text="login"
-        android:layout_gravity="center"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:gravity="center">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="don't have an account? "
-        />
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            android:id="@+id/to_register_text"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="register now!"
-            android:textColor="#0000ff"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:text="Logo"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="400dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="30dp"
+                android:paddingRight="20dp">
+
+                <EditText
+                    android:id="@+id/editTextPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="  Phone"
+                    android:inputType="phone"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:textIsSelectable="false"
+                    android:textSize="24sp"
+                    />
+
+                <Button
+                    android:id="@+id/buttonGenerateOTP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/main_purple"
+                    android:onClick="generateOTP"
+                    android:padding="10dp"
+                    android:text="Generate OTP"
+                    android:textAllCaps="false"
+                    app:cornerRadius="20dp" />
+
+                <EditText
+                    android:id="@+id/editTextOTP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="  OTP"
+                    android:inputType="number"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+
+                    android:paddingBottom="10dp"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/buttonVerifyOTP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/gray"
+                    android:onClick="verifyOTP"
+                    android:padding="10dp"
+                    android:text="Verify OTP"
+                    android:textAllCaps="false"
+                    app:cornerRadius="20dp"
+                    android:enabled="false"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="151dp"
+                android:layout_height="148dp"
+                android:layout_gravity="bottom|right"
+                android:orientation="horizontal"/>
+
+        </FrameLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/main_pink"
+            android:visibility="invisible" />
 
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

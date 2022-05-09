@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,8 +26,12 @@ public class AddNewContact extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_add_phone_contact);
-        setTitle("dev2qa.com - Android Add Phone Contact Example.");
+        setTitle("Add Phone Contact.");
         displayNameEditor = (EditText)findViewById(R.id.add_phone_contact_display_name);
         phoneNumberEditor = (EditText)findViewById(R.id.add_phone_contact_number);
         // Initialize phone type dropdown spinner.

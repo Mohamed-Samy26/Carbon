@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.authentication.SignUp">
+    tools:context="com.datastructures.chatty.screens.authentication.SignUp">
 
     <Button
         android:id="@+id/rigester_button"
@@ -41,7 +41,7 @@
 
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
+        android:id="@+id/current_user_profile_image"
         android:layout_width="@dimen/_75sdp"
         android:layout_height="@dimen/_75sdp"
         android:src="@android:drawable/ic_menu_camera"
@@ -83,7 +83,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/profile_image"
+        app:layout_constraintTop_toTopOf="@+id/current_user_profile_image"
         app:layout_constraintVertical_bias="0.477" />
 
     <EditText
@@ -106,10 +106,10 @@
         android:layout_height="31dp"
         android:clickable="true"
         app:fabSize="auto"
-        app:layout_constraintBottom_toBottomOf="@+id/profile_image"
-        app:layout_constraintEnd_toEndOf="@+id/profile_image"
+        app:layout_constraintBottom_toBottomOf="@+id/current_user_profile_image"
+        app:layout_constraintEnd_toEndOf="@+id/current_user_profile_image"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/profile_image"
+        app:layout_constraintStart_toStartOf="@+id/current_user_profile_image"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.937"
         app:rippleColor="#FFFFFF"

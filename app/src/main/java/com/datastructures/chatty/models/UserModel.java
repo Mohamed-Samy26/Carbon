@@ -5,6 +5,9 @@ public class UserModel {
     private String imageUri;
     private String phone;
 
+    public UserModel() {
+    }
+
 
     public String getImageUri() {
         return imageUri;

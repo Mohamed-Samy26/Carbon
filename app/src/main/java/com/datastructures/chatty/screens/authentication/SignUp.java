@@ -3,6 +3,9 @@ package com.datastructures.chatty.screens.authentication;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.datastructures.chatty.R;
 import com.datastructures.chatty.databinding.ActivitySignUpBinding;
-import com.datastructures.chatty.main.home;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -32,18 +34,22 @@ public class SignUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         ActivitySignUpBinding binding = ActivitySignUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         descriptionEditText = findViewById(R.id.description);
         registerUserNameEditText = findViewById(R.id.registering_user_name);
         registerPhoneEditText = findViewById(R.id.registering_user_phone);
-        ProfilePhoto=findViewById(R.id.profile_image);
+        ProfilePhoto=findViewById(R.id.current_user_profile_image);
         TextView toLogin = findViewById(R.id.to_login_text);
 
         toLogin.setOnClickListener(view -> {
 
-            Intent intent =new Intent(SignUp.this , LoginActivity.class);
+            Intent intent =new Intent(SignUp.this , LoginFormActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         });
@@ -75,9 +81,6 @@ public class SignUp extends AppCompatActivity {
                             intent.putExtra("determinant", "signup");
                             intent.putExtra("imageUri", profileImageUri.toString());
                             startActivity(intent);
-
-
-
                         }
                     }
                 });
@@ -87,13 +90,19 @@ public class SignUp extends AppCompatActivity {
 
 
         });
-        binding.ChangePhoto.setOnClickListener(v -> com.github.drjacky.imagepicker.ImagePicker.Companion.with
-                (SignUp.this)
-                .maxResultSize(1080,1080)
-                .start(20));
+        binding.currentUserProfileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pickImg();
+            }
+        });
 
     }
-
+    public final void pickImg() {
+        Intent intent = new Intent("android.intent.action.GET_CONTENT");
+        intent.setType("image/*");
+        this.startActivityForResult(intent, 3);
+    }
     private boolean validateUsername() {
         String val = registerUserNameEditText.getText().toString();
 

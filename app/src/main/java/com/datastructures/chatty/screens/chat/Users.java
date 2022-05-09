@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -28,16 +29,21 @@ import com.datastructures.chatty.models.UserModel;
 import com.datastructures.chatty.screens.chatroom.ChatRoom_activity;
 import com.datastructures.chatty.utils.UsersRecyclerViewClick;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.PriorityQueue;
 import java.util.Queue;
+
 
 public class Users extends Fragment implements UsersRecyclerViewClick {
 
     static final int PICK_CONTACT=1;
     private boolean clicked = false;
-    ArrayList<UserModel> userModels;
+    private ArrayList<UserModel> userModels;
     private Animation rotOpen;
     private Animation rotClose;
     private Animation toBottom;
@@ -45,6 +51,7 @@ public class Users extends Fragment implements UsersRecyclerViewClick {
     private FloatingActionButton addFab ;
     private FloatingActionButton addExisting ;
     private FloatingActionButton addNew ;
+    private UserListAdapter userListAdapter;
 
 
     public Users() {
@@ -55,8 +62,6 @@ public class Users extends Fragment implements UsersRecyclerViewClick {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        binding = FragmentUsers inflate(getLayoutInflater());
-//        userViewModel = new UserViewModel();
     }
 
     @Nullable
@@ -69,15 +74,15 @@ public class Users extends Fragment implements UsersRecyclerViewClick {
         rotClose = AnimationUtils.loadAnimation(getContext() , R.anim.rotate_close_anim);
         toBottom = AnimationUtils.loadAnimation(getContext() , R.anim.to_bottom_anim);
         fromBottom = AnimationUtils.loadAnimation(getContext() , R.anim.from_bottom_anim);
-        
+
         addFab =  view.findViewById(R.id.add_fab);
         addExisting =  view.findViewById(R.id.add_existing);
         addNew =  view.findViewById(R.id.add_new);
 
         userModels = buildList();
-        recyclerView.setAdapter(new UserListAdapter(userModels, this));
+        userListAdapter = new UserListAdapter(userModels, this);
+        recyclerView.setAdapter(userListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
         //Adding Existing user
         addExisting.setOnClickListener(view1 -> openContacts());
         //Adding new user
@@ -119,9 +124,37 @@ public class Users extends Fragment implements UsersRecyclerViewClick {
                 phones.moveToFirst();
                 String selectedContactNumber = phones.getString(phones.getColumnIndexOrThrow("data1"));
                 System.out.println(processPhone(selectedContactNumber));
+                getUserData(selectedContactNumber);
                 phones.close();
             }
         }
+    }
+
+    private void getUserData(String phone ) {
+        try {
+            DocumentReference docRef = FirebaseFirestore.getInstance().collection("users").document(phone);
+
+            docRef.get().addOnCompleteListener(task -> {
+                if(task.isSuccessful()) {
+                    DocumentSnapshot doc = task.getResult();
+                    if(doc.exists()){
+                        UserModel user = new UserModel();
+                        user.setName(Objects.requireNonNull(doc.get("name")).toString());
+                        user.setMsg(Objects.requireNonNull(doc.get("description")).toString());
+                        user.setImageUri(Objects.requireNonNull(doc.get("profileImageUrl")).toString());
+                        user.setPhone(phone);
+                        userListAdapter.addToList(user);
+                    }else {
+                        Toast.makeText(getActivity(),
+                                "User doesn't exist !",
+                                Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
     }
 
     private String processPhone(String selectedContactNumber) {
@@ -167,14 +200,14 @@ public class Users extends Fragment implements UsersRecyclerViewClick {
     //animation setters
     private void setAnimation( boolean clicked) {
         if(!clicked) {
-             addExisting.startAnimation(fromBottom);
-             addNew.startAnimation(fromBottom);
-             addFab.startAnimation(rotOpen);
+            addExisting.startAnimation(fromBottom);
+            addNew.startAnimation(fromBottom);
+            addFab.startAnimation(rotOpen);
         }else{
 
-             addExisting.startAnimation(toBottom);
-             addNew.startAnimation(toBottom);
-             addFab.startAnimation(rotClose);
+            addExisting.startAnimation(toBottom);
+            addNew.startAnimation(toBottom);
+            addFab.startAnimation(rotClose);
 
         }
     }
@@ -202,12 +235,6 @@ public class Users extends Fragment implements UsersRecyclerViewClick {
     }
     private ArrayList<UserModel> buildList(){
         ArrayList<UserModel> arrayList = new ArrayList<>();
-        String address = "mipmap-mdpi/user_img.png";
-        arrayList.add(new UserModel("Eljoo" , "Yasta ana b7bk yasta",address, "123"));
-        arrayList.add(new UserModel("Samy" , "El3nkboot el nono",address, "123"));
-        arrayList.add(new UserModel("Kimo" , "Yalla Valo",address, "123"));
-        arrayList.add(new UserModel("Omar" , "Yalla Generalz",address, "123"));
-        arrayList.add(new UserModel("Nofal" , "Ana mosh 3arefny ana toht mny",address,"123"));
         return arrayList;
     }
 

@@ -1,6 +1,5 @@
 import android.annotation.SuppressLint
 import android.os.Build
-import com.datastructures.chatty.models.UserStatue
 
 
 import android.view.LayoutInflater
@@ -11,6 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.datastructures.chatty.R
+import com.datastructures.chatty.models.UserStatue
 import kotlinx.android.synthetic.main.story_list_item.view.*
 
 class Statue_Adapter() : androidx.recyclerview.widget.ListAdapter<UserStatue, Statue_Adapter.viewHolder>(Diff()) {

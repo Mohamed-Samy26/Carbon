@@ -1,50 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.datastructures.chatty"
     android:theme="@android:style/Theme.NoTitleBar">
-
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        tools:ignore="ScopedStorage"
-        android:maxSdkVersion="31" />
-<!--        -->
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo"
         android:label="@string/app_name"
-        android:requestLegacyExternalStorage="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/logo_img_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".screens.authentication.LoginActivity"
+            android:name="com.datastructures.chatty.ui.main.SettingActivity"
+            android:launchMode = "singleTop"
             android:exported="false" />
         <activity
-            android:name=".screens.chat.VideoActivity"
+            android:name=".screens.authentication.LoginFormActivity"
+            android:exported="false"
+            android:launchMode = "singleTop"
+            />
+        <activity
+            android:name="com.datastructures.chatty.screens.chat.VideoActivity"
+            android:launchMode = "singleTop"
             android:exported="false" />
         <activity
-            android:name=".screens.status.AddTextStory"
+            android:name="com.datastructures.chatty.screens.chatroom.ChatRoom_activity"
+            android:exported="false"
+            android:launchMode = "singleTop"
+            />
+        <activity
+            android:name="com.datastructures.chatty.screens.status.AddTextStory"
+            android:launchMode = "singleTop"
             android:exported="false" />
         <activity
-            android:name=".screens.status.AddImageActivity"
-            android:exported="false" />
+            android:name="com.datastructures.chatty.screens.status.AddImageActivity"
+            android:exported="false"
+            android:launchMode = "singleTop"
+            />
         <activity
-            android:name=".main.home"
-            android:exported="true" />
+            android:name="com.datastructures.chatty.ui.main.Home"
+            android:exported="true"
+            android:launchMode = "singleTop"
+            />
         <activity
-            android:name=".screens.chat.AddNewContact"
-            android:exported="false" />
+            android:name="com.datastructures.chatty.screens.chat.AddNewContact"
+            android:exported="false"
+            android:launchMode = "singleTop"
+            />
         <activity
-            android:name=".main.SplashScreen"
+            android:name="com.datastructures.chatty.ui.main.SplashScreen"
+            android:launchMode = "singleTop"
             android:exported="true"
             android:theme="@style/Theme.MyApplication.NoActionBar">
             <intent-filter>
@@ -54,16 +65,79 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".screens.authentication.VerifyPhoneNumber"
+            android:name="com.datastructures.chatty.screens.authentication.VerifyPhoneNumber"
+            android:launchMode = "singleTop"
             android:exported="true" />
         <activity
-            android:name=".screens.authentication.SignUp"
+            android:name="com.datastructures.chatty.screens.authentication.SignUp"
+            android:launchMode = "singleTop"
             android:exported="true" />
-        <activity
-            android:name=".screens.chatroom.ChatRoom_activity"
-            android:exported="false"
-            android:parentActivityName=".main.home"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<manifest xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    package="com.datastructures.chatty"-->
+<!--    android:theme="@android:style/Theme.NoTitleBar">-->
+
+
+<!--    <uses-permission android:name="android.permission.READ_CONTACTS" />-->
+<!--    <uses-permission android:name="android.permission.WRITE_CONTACTS" />-->
+<!--    <uses-permission android:name="android.permission.INTERNET" />-->
+<!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+<!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+<!--    <uses-permission-->
+<!--        android:name="android.permission.WRITE_EXTERNAL_STORAGE"-->
+<!--        tools:ignore="ScopedStorage"-->
+<!--        android:maxSdkVersion="31" />-->
+<!--&lt;!&ndash;        &ndash;&gt;-->
+
+
+<!--    <application-->
+<!--        android:allowBackup="true"-->
+<!--        android:icon="@mipmap/ic_launcher"-->
+<!--        android:label="@string/app_name"-->
+<!--        android:requestLegacyExternalStorage="true"-->
+<!--        android:roundIcon="@mipmap/ic_launcher_round"-->
+<!--        android:supportsRtl="true"-->
+<!--        android:theme="@style/Theme.MyApplication">-->
+<!--        <activity-->
+<!--            android:name=".screens.chat.VideoActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".screens.status.AddTextStory"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".screens.status.AddImageActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name="ui.main.Home"-->
+<!--            android:exported="true" />-->
+<!--        <activity-->
+<!--            android:name=".screens.chat.AddNewContact"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".ui.main.SplashScreen"-->
+<!--            android:exported="true"-->
+<!--            android:theme="@style/Theme.MyApplication.NoActionBar">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".screens.authentication.VerifyPhoneNumber"-->
+<!--            android:exported="true" />-->
+<!--        <activity-->
+<!--            android:name=".screens.authentication.SignUp"-->
+<!--            android:exported="true" />-->
+<!--        <activity-->
+<!--            android:name=".screens.chatroom.ChatRoom_activity"-->
+<!--            android:exported="false"-->
+<!--            android:parentActivityName=".main.home"-->
+<!--            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>-->
+<!--    </application>-->
+
+<!--</manifest>-->

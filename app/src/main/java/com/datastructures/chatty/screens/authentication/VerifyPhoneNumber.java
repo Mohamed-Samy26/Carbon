@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -14,8 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.datastructures.chatty.R;
 import com.datastructures.chatty.databinding.ActivityVerifyPhoneNumberBinding;
-
-import com.datastructures.chatty.main.home;
+import com.datastructures.chatty.ui.main.Home;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -52,6 +53,10 @@ public class VerifyPhoneNumber extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         ActivityVerifyPhoneNumberBinding binding = ActivityVerifyPhoneNumberBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         activityDeterminant = getIntent().getStringExtra("determinant");
@@ -63,7 +68,8 @@ public class VerifyPhoneNumber extends AppCompatActivity {
         phoneNo = getIntent().getStringExtra("phoneNo");
         name = getIntent().getStringExtra("name");
         description = getIntent().getStringExtra("description");
-        imageUri = Uri.parse(getIntent().getStringExtra("imageUri"));
+        if(activityDeterminant.equals("signup"))
+            imageUri = Uri.parse(getIntent().getStringExtra("imageUri"));
 
         sendVerificationCodeToUser(phoneNo);
 
@@ -163,8 +169,9 @@ public class VerifyPhoneNumber extends AppCompatActivity {
     }
 
     private void navigateToHome() {
-        Intent intent =new Intent(VerifyPhoneNumber.this , home.class);
+        Intent intent =new Intent(VerifyPhoneNumber.this , Home.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.putExtra("phone",phoneNo);
         startActivity(intent);
     }
 
@@ -173,25 +180,25 @@ public class VerifyPhoneNumber extends AppCompatActivity {
         String randomKey = UUID.randomUUID().toString();
         final StorageReference storageReference = FirebaseStorage.getInstance().getReference()
                 .child("profiles/"+System.currentTimeMillis()+randomKey);
-       storageReference.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-           @Override
-           public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-               Toast.makeText(VerifyPhoneNumber.this, "file put success", Toast.LENGTH_SHORT).show();
-               storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                   @Override
-                   public void onSuccess(Uri uri) {
-                       downloadUrl = uri.toString();
-                       Map<String,Object> map = new HashMap<>();
-                       map.put("name",name);
-                       map.put("description",description);
-                       map.put("profileImageUrl",downloadUrl);
-                       db.collection("users").document(phoneNo).set(map).addOnCompleteListener(task -> {
-                           Toast.makeText(VerifyPhoneNumber.this , "Access granted " , Toast.LENGTH_SHORT).show();
-                       });
-                   }
-               });
-           }
-       });
+        storageReference.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                Toast.makeText(VerifyPhoneNumber.this, "file put success", Toast.LENGTH_SHORT).show();
+                storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        downloadUrl = uri.toString();
+                        Map<String,Object> map = new HashMap<>();
+                        map.put("name",name);
+                        map.put("description",description);
+                        map.put("profileImageUrl",downloadUrl);
+                        db.collection("users").document(phoneNo).set(map).addOnCompleteListener(task -> {
+                            Toast.makeText(VerifyPhoneNumber.this , "Access granted " , Toast.LENGTH_SHORT).show();
+                        });
+                    }
+                });
+            }
+        });
 
 
     }

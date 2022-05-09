@@ -50,6 +50,7 @@ public class ChatRoom_activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide(); //to hide action bar
         setContentView(R.layout.activity_chat_room);
 
         if (savedInstanceState == null) {
@@ -141,6 +142,7 @@ public class ChatRoom_activity extends AppCompatActivity {
                         .addOnFailureListener(e -> Log.w(TAG, "Error writing document", e));
                 //empty the message holder to receive the next message
                 msgTxt.setText("");
+                Log.d(TAG, ">>>>>>>>>>>>>>>>>>>>> Currentpath: " + docRef.getPath() +" "+ db.getApp() + " " + docRef.getId() +"\n");
             }
         });
     }

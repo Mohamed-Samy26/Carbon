@@ -6,16 +6,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:layout_marginStart="@dimen/_5sdp"
+        android:background="@color/design_default_color_secondary"
         >
         <de.hdodenhof.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/profile_image"
+        android:id="@+id/current_user_profile_image"
+            android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_11sdp"
         android:layout_width="@dimen/_45sdp"
         android:layout_height="@dimen/_45sdp"
-        android:src="@mipmap/img"
+        android:src="@mipmap/logo"
         app:civ_border_width="@dimen/_2sdp"
         app:civ_border_color="#FF000000"/>
     <LinearLayout
@@ -38,6 +38,7 @@
             android:textSize="@dimen/_15ssp"
             android:textStyle="bold"
             android:id="@+id/name"
+            android:textColor="@color/colorPrimary"
 
             />
         <TextView
@@ -52,6 +53,7 @@
             android:textSize="@dimen/_12ssp"
             android:text="@string/message_should_be_displayed_here"
             android:id="@+id/msg"
+            android:textColor="@color/colorPrimary"
 
             />
     </LinearLayout></LinearLayout>

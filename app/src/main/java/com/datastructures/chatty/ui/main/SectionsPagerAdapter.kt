@@ -1,4 +1,4 @@
-package com.datastructures.chatty.main
+package com.datastructures.chatty.ui.main
 
 import android.content.Context
 import androidx.fragment.app.Fragment
@@ -6,8 +6,8 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.datastructures.chatty.R
 import com.datastructures.chatty.screens.chat.Users
-import com.datastructures.chatty.main.PlaceholderFragment.Companion.newInstance
 import com.datastructures.chatty.screens.status.StoriesFragment
+import com.datastructures.chatty.ui.main.PlaceholderFragment.Companion.newInstance
 
 private val TAB_TITLES = arrayOf(
     R.string.tab_text_1,

@@ -1,11 +1,14 @@
 package com.datastructures.chatty.screens.status
 
+import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.datastructures.chatty.R
 import com.datastructures.chatty.models.StoryModel
 import com.google.firebase.database.ktx.database
@@ -15,6 +18,8 @@ import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_add_image.*
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.jvm.internal.Intrinsics
+
 
 class AddImageActivity : AppCompatActivity() {
 
@@ -26,6 +31,7 @@ class AddImageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_image)
 
+        checkStoragePermission()
         pickImg()
 
         addImageStoryToFireBase.setOnClickListener {
@@ -40,6 +46,40 @@ class AddImageActivity : AppCompatActivity() {
 
     }
 
+    private fun checkStoragePermission() {
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            ) == -1
+        ) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                101
+            )
+        } else {
+            Toast.makeText(this, "Permission already granted", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        Intrinsics.checkNotNullParameter(permissions, "permissions")
+        Intrinsics.checkNotNullParameter(grantResults, "grantResults")
+        super.onRequestPermissionsResult(requestCode, permissions!!, grantResults)
+        if (requestCode == 101) {
+            if (grantResults.size != 0 && grantResults[0] == 0) {
+                Toast.makeText(this, "Storage Permission Granted", Toast.LENGTH_LONG).show()
+            } else {
+                onBackPressed()
+            }
+        }
+    }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 

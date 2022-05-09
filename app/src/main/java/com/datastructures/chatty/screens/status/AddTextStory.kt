@@ -4,12 +4,12 @@ import android.app.Activity
 import android.content.Context
 import android.graphics.Bitmap
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import com.datastructures.chatty.R
 import com.datastructures.chatty.models.StoryModel
@@ -22,17 +22,17 @@ import java.io.ByteArrayOutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 
+
 class AddTextStory : AppCompatActivity() {
 
-    lateinit var selectedImgUri: Uri
-    var uid = "01017046725"
+    private lateinit var selectedImgUri: Uri
+    private var uid = "01017046725"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_text_story)
 
         addTextStoryToFireBase.setOnClickListener {
             if (descriptionText.text.isNotEmpty()) {
-                //TODO: Send To FireBase
                 sendToFireBase()
 
             } else {
@@ -69,6 +69,7 @@ class AddTextStory : AppCompatActivity() {
     }
 
 
+
     private fun sendToFireBase() {
         hideKeyboard(this)
         val bitmap: Bitmap = takeScreenshot(main)
@@ -89,11 +90,9 @@ class AddTextStory : AppCompatActivity() {
                     val sdf = SimpleDateFormat("dd/M/yyyy HH:mm:ss")
                     val currentDate = sdf.format(Date())
 
-                    onBackPressed()
+                    this.onBackPressed()
 
-                    realTimeDatabaseRef.child("users").child("01017046725").child(randomKey).setValue(
-                        StoryModel(it.toString(), null,  currentDate)
-                    )
+                    realTimeDatabaseRef.child("users").child("01017046725").child(randomKey).setValue(StoryModel(it.toString(), null,  currentDate))
                         .addOnSuccessListener {
                             fireStoreRef.collection("users").document(uid).update("hasStory" , true)
                             fireStoreRef.collection("users").document(uid).update("lastStory" , currentDate)
@@ -131,15 +130,15 @@ class AddTextStory : AppCompatActivity() {
 
     }
 
-    fun hideKeyboard( activity : Activity) {
+    private fun hideKeyboard(activity : Activity) {
         var imm = activity.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
         //Find the currently focused view, so we can grab the correct window token from it.
-        var view = activity.currentFocus;
+        var view = activity.currentFocus
         //If no view currently has focus, create a new one, just so we can grab a window token from it
         if (view == null) {
-            view = View(activity);
+            view = View(activity)
         }
-        imm.hideSoftInputFromWindow(view.windowToken, 0);
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
-
 }
+

@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.datastructures.chatty.R;
 import com.datastructures.chatty.models.UserModel;
 import com.datastructures.chatty.utils.UsersRecyclerViewClick;
@@ -18,9 +20,16 @@ import java.util.ArrayList;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserViewHolder> {
+
+    public ArrayList<UserModel> getUsersList() {
+        return usersList;
+    }
+
     private ArrayList<UserModel> usersList ;
     private final UsersRecyclerViewClick usersRecyclerViewClick;
-    public UserListAdapter(ArrayList<UserModel> arrayList,
+
+
+    public  UserListAdapter(ArrayList<UserModel> arrayList,
                            UsersRecyclerViewClick usersRecyclerViewClick) {
         usersList = arrayList;
         this.usersRecyclerViewClick = usersRecyclerViewClick;
@@ -40,18 +49,21 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserVi
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
         holder.name.setText(usersList.get(position).getName());
         holder.msg.setText(usersList.get(position).getMsg());
-//        holder.image.setImageBitmap(getUserImage(usersList.get(position).getImageUri()));
+        loadImage(holder.image, holder.itemView,usersList.get(position).getImageUri());
 
     }
 
-//    private Bitmap getUserImage(String encodedImage) {
-//        byte[] bytes = Base64.getDecoder().decode(encodedImage);
-//        return BitmapFactory.decodeByteArray(bytes,0,bytes.length);
-//    }
+
 
     @SuppressLint("NotifyDataSetChanged")
     public void setList(ArrayList<UserModel> usersList){
         this.usersList = usersList;
+        notifyDataSetChanged();
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void addToList(UserModel userModel){
+        this.usersList.add(userModel);
         notifyDataSetChanged();
     }
 
@@ -68,7 +80,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserVi
             super(itemView);
             this.name =(TextView) itemView.findViewById(R.id.name);
             this.msg = (TextView) itemView.findViewById(R.id.msg);
-            this.image = (CircleImageView) itemView.findViewById(R.id.profile_image);
+            this.image = (CircleImageView) itemView.findViewById(R.id.current_user_profile_image);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -82,5 +94,11 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserVi
                 }
             });
         }
+    }
+
+    //TODO
+    public static void loadImage(CircleImageView circleImageView, View view, String url){
+        Glide.with(view).load(url).diskCacheStrategy(DiskCacheStrategy.ALL).into(circleImageView);
+
     }
 }

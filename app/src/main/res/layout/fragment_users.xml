@@ -16,7 +16,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_8sdp"
         android:layout_gravity="bottom|end"
         android:orientation="vertical">
@@ -50,7 +50,7 @@
             android:id="@+id/add_fab"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_add_24"
-            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
             android:elevation="@dimen/_8sdp"
             android:layout_gravity="center"
             android:contentDescription="@string/open_add" />

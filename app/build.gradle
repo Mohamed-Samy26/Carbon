@@ -7,7 +7,7 @@ plugins {
 //
 android {
     compileSdk 31
-011
+
     defaultConfig {
         applicationId "com.datastructures.chatty"
         minSdk 27
@@ -115,6 +115,10 @@ dependencies {
 
     //jitsi
     implementation ('org.jitsi.react:jitsi-meet-sdk:2.9.0') { transitive = true }
+
+    //lottie
+    implementation "com.airbnb.android:lottie:5.0.3"
+
 
 
 
