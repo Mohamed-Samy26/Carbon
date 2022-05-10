@@ -4,11 +4,13 @@ import static android.content.ContentValues.TAG;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.datastructures.chatty.R;
 import com.datastructures.chatty.adapters.MessageAdapter;
 import com.datastructures.chatty.screens.chat.VideoActivity;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -37,6 +40,7 @@ public class ChatRoom_activity extends AppCompatActivity {
     private EditText msgTxt;
     private ImageButton vidCall;
 
+
     //local state and current user handle
     private final User currentUser = new User("user" , "user");
     private User calleeUser ;
@@ -53,12 +57,18 @@ public class ChatRoom_activity extends AppCompatActivity {
         getSupportActionBar().hide(); //to hide action bar
         setContentView(R.layout.activity_chat_room);
 
+        ShapeableImageView img = findViewById(R.id.recImg);
+        TextView recName = findViewById(R.id.TVname);
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras == null) {
                finish();
             } else {
                calleeUser = new User(extras.getString("name"), extras.getString("RecPhone"));
+               recName.setText(calleeUser.getName());
+               if (extras.getString("image") != null){
+                   img.setImageURI(Uri.parse(extras.getString("image")));
+               }
             }
         } else {
             calleeUser = new User((String) savedInstanceState.getSerializable("name"),

@@ -28,7 +28,8 @@
                 android:layout_gravity="center"
                 android:layout_margin="12dp"
                 app:shapeAppearanceOverlay="@style/roundedImageView"
-                app:srcCompat="@drawable/ic_launcher_background" />
+                app:srcCompat="@drawable/ic_launcher_background"
+                android:id="@+id/recImg"/>
 
             <TextView
                 android:id="@+id/TVname"
