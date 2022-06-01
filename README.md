@@ -1,43 +1,95 @@
-# Carbon
 
-### A real-time Android chat app with the ability to make video calls and share daily stories 
+![Logo](carbon_gif_logo.gif)
 
+
+# Carbon Chat App
+
+ Android live chat application, Project for the data structures course .
+
+
+## Authors
+
+- [@Mohamed-Samy26](https://github.com/Mohamed-Samy26) 
+- [@RedBiscuits](https://github.com/RedBiscuits)
+- [@KareemHussen](https://github.com/KareemHussen)
+- [@Nour10102002](https://github.com/Nour10102002)
+- [@HaneenIbrahim2](https://github.com/HaneenIbrahim2)
+- [@OmarSherif2](https://github.com/OmarSherif2)
+
+
+
+
+
+## Features
+
+- Splash Screen.
+- Phone Login and register.
+- Add/remove/create contacts.
+- One-to-One chat.
+- One-to-Group chat.
+- Stories images and text.
+- Audio Records.
+- Message encoding
+- Video/Audio calls.
+- Data privacy and withhold.
+- Profile edit and view.
+- Conference rooms with streaming,recording,voting and security features.
+- Settings activity with app lock(Pattern and Fingerprint).
+- English and Arabic support.
+
+
+
+
+
+# In App Screenshots
 ## Splash screen
+![App Screenshot](screenshots/splash.png)
+## Registeration
+![App Screenshot](screenshots/register.png)
+## Login
+![App Screenshot](screenshots/login.png)
+## Home
+![App Screenshot](screenshots/home.png)
+## Chatroom
+![App Screenshot](screenshots/chatroom.png)
+## Video call
+![App Screenshot](screenshots/videocall.png)
+## Video call options
+![App Screenshot](screenshots/videochat_options.png)
+## Overlaying videocall
+![App Screenshot](screenshots/in_app_videochat.png)
+## Stories
+![App Screenshot](screenshots/stories.png)
+## Profile
+![App Screenshot](screenshots/profile.png)
+## Private account
+![App Screenshot](screenshots/private_profile1_cleanup.png)
+## Setting applock
+![App Screenshot](screenshots/applock_insettings.png)
+## Applock
+![App Screenshot](screenshots/applock.png)
 
-Animated splas screen
 
-![splash](https://github.com/Mohamed-Samy26/Carbon/blob/master/app/screenshots/splash.gif?raw=true) 
-
-## Login screen
-
-Application login activity, Uses the phone number and firebase authentication to generate OTP used for login
-
-![login](https://raw.githubusercontent.com/Mohamed-Samy26/Carbon/master/app/screenshots/Screenshot%202022-05-10%20031108.jpg?token=GHSAT0AAAAAABTELCUMPKKWLIWLQIKXZRAMYTZ2JWQ)
-
-## Home Screen
-
-Home screen with floating acion button to add contacts and start new chat rooms
-![home](https://raw.githubusercontent.com/Mohamed-Samy26/Carbon/master/app/screenshots/Screenshot%202022-05-10%20031212.jpg?token=GHSAT0AAAAAABTELCUMASEGTAFFOZKCEZVWYTZ2KBA)
-
-### Add contact
-
-Form to create a new contact
-![add](https://raw.githubusercontent.com/Mohamed-Samy26/Carbon/master/app/screenshots/Screenshot%202022-05-10%20032438.jpg?token=GHSAT0AAAAAABTELCUNPAZREWXMKZHQRVX4YTZ4M2Q)
-
-## Settings activity
-
-Contains a switch for Dark / Light modes and multiple languages support (currently English and Arabic)
-
-Dark mode:
-
-![dark](https://raw.githubusercontent.com/Mohamed-Samy26/Carbon/master/app/screenshots/Screenshot%202022-05-10%20031307.jpg?token=GHSAT0AAAAAABTELCUMLFG7REAEM6ADA2L6YTZ2KJA)
-
-Light mode:
-
-![light](https://raw.githubusercontent.com/Mohamed-Samy26/Carbon/master/app/screenshots/Screenshot%202022-05-10%20031246.jpg?token=GHSAT0AAAAAABTELCUM7GKI3OVU4XM47FJOYTZ2KGQ)
-
-## Chat Room 
-
-Chat room activity wiith button to start video chat
-
-![](https://raw.githubusercontent.com/Mohamed-Samy26/Carbon/master/app/screenshots/Screenshot%202022-05-10%20034233.jpg?token=GHSAT0AAAAAABTELCUNCS6PUJMXWWIR5OWGYTZ4M5Q)
+# Technologies
+## Android
+- Supported by Android Oreo+
+- Google design materials.
+- Lifecycle
+## Firebase
+- Firebase Firestore.
+- Firebase Realtime.
+- Firebase Cloud Storage.
+- Firebase Custom Authentication (phone).
+## WebRTC
+- Implemented by Jitsi SDK.
+## External dependencies
+- Multidex.
+- Recycler view and Card view.
+- hdodenhof circular image.
+- intuint SDP and SSP.
+- OMARIHAMZA Strory view.
+- Lifecycle.
+- sarnavakonar text writer.
+- Jitsi SDK.
+- Lottie animations.
+- Kotlin Extenstions.
