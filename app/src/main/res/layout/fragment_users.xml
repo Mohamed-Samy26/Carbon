@@ -1,60 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".screens.chat.Users">
+    style="@style/app_theme">
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/users_RV"
+        android:id="@+id/users_RV"/>
 
-        />
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="93dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_8sdp"
-        android:layout_gravity="bottom|end"
         android:orientation="vertical">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_new_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.FloatingActionButton.Primary"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:clickable="true"
+            android:contentDescription="@string/add_chat"
+            android:focusable="true"
+            android:src="@drawable/ic_baseline_group_add_24"
+            android:visibility="invisible"
+            app:fab_size="mini" />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_new"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:clickable="true"
-            android:focusable="true"
-            app:fab_size="mini"
-            android:visibility="invisible"
             android:layout_marginBottom="@dimen/_6sdp"
+            android:clickable="true"
+            android:contentDescription="@string/add_chat"
+            android:focusable="true"
             android:src="@drawable/ic_baseline_add_24"
-            android:contentDescription="@string/add_chat" />
+            android:visibility="invisible"
+            app:fab_size="mini" />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_existing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:fab_size="mini"
             android:layout_gravity="center"
             android:layout_marginBottom="@dimen/_8sdp"
             android:clickable="true"
+            android:contentDescription="@string/add_chat"
             android:focusable="true"
             android:visibility="invisible"
 
-            app:srcCompat="@drawable/ic_baseline_person_add_24"
-            android:contentDescription="@string/add_chat" />
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:id="@+id/add_fab"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_add_24"
-            android:layout_marginBottom="@dimen/_12sdp"
-            android:elevation="@dimen/_8sdp"
-            android:layout_gravity="center"
-            android:contentDescription="@string/open_add" />
+            app:fab_size="mini"
+            app:srcCompat="@drawable/ic_baseline_person_add_24" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:contentDescription="@string/open_add"
+            android:elevation="@dimen/_8sdp"
+            android:src="@drawable/ic_baseline_add_24" />
     </LinearLayout>
 
 </FrameLayout>

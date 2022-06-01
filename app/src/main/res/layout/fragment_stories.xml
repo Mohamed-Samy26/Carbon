@@ -2,16 +2,16 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/myStoryImg"
-        android:layout_width="@dimen/_55sdp"
-        android:layout_height="@dimen/_55sdp"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_70sdp"
         android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:scaleType="centerCrop"
+        android:src="@drawable/user_img_foreground"
         app:civ_border_color="#00FF00"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,10 +20,9 @@
         android:id="@+id/myStoryTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginStart="@dimen/_15sdp"
         android:layout_marginTop="@dimen/_25sdp"
         android:gravity="center_vertical"
-        android:text="Kareem Hussen"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/myStoryImg"
@@ -36,7 +35,6 @@
         android:layout_marginStart="@dimen/_6sdp"
         android:layout_marginTop="@dimen/_8sdp"
         android:gravity="center_vertical"
-        android:text="15 min ago"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/day"
         app:layout_constraintTop_toBottomOf="@+id/myStoryTitle" />
@@ -45,10 +43,9 @@
         android:id="@+id/day"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginStart="@dimen/_15sdp"
         android:layout_marginTop="@dimen/_8sdp"
         android:gravity="center_vertical"
-        android:text="Today"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/myStoryImg"
         app:layout_constraintTop_toBottomOf="@+id/myStoryTitle" />
@@ -97,6 +94,7 @@
             android:focusable="true"
             android:scaleX="0.9"
             android:scaleY="0.9"
+            app:fab_colorNormal="@color/teal_200"
             android:src="@drawable/ic_baseline_image_24"
             app:fab_title="Add Image"
             app:layout_constraintBottom_toTopOf="@+id/addTextStory"

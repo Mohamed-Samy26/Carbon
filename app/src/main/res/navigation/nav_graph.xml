@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/storyDetailsFragment"
-        android:name="com.datastructures.chatty.screens.StoriesFragment"
+        android:name="com.example.statues.screens.TextStoryDetailsFragment"
         android:label="fragment_story_details"
         tools:layout="@layout/fragment_story_text_details" />
     <fragment
         android:id="@+id/storiesFragment"
-        android:name="com.datastructures.chatty.screens.status.StoriesFragment"
+        android:name="com.example.statues.screens.StoriesFragment"
         android:label="fragment_stories"
         tools:layout="@layout/fragment_stories" >
         <action

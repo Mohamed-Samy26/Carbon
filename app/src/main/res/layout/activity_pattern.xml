@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/md_theme_light_secondaryContainer"
+    android:orientation="vertical">
+
+
+    <com.andrognito.patternlockview.PatternLockView
+        android:id="@+id/pattern_LockView"
+        android:layout_width="371dp"
+        android:layout_height="443dp"
+        android:baselineAligned="false"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.649"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/my_view9"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@drawable/bg_view_blue_oval"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pattern_LockView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pattern_LockView"
+        app:layout_constraintVertical_bias="0.868" />
+
+    <TextView
+        android:id="@+id/my_view7"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@drawable/bg_view_blue_oval"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_view8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.855"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/my_view8"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/my_view6"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@drawable/bg_view_blue_oval"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/my_view9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pattern_LockView"
+        app:layout_constraintVertical_bias="0.622" />
+
+    <TextView
+        android:id="@+id/my_view5"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@drawable/bg_view_blue_oval"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_view6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/my_view6"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/my_view3"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@drawable/bg_view_blue_oval"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/my_view"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/my_view2"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@drawable/bg_view_blue_oval"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.855"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/my_view"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/my_view"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@drawable/bg_view_blue_oval"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/my_view5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pattern_LockView"
+        app:layout_constraintVertical_bias="0.335" />
+
+    <TextView
+        android:id="@+id/my_view8"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@drawable/bg_view_blue_oval"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_view9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/my_view9"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/my_view4"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@drawable/bg_view_blue_oval"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_view5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/my_view5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSetPattern"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/custtom_button"
+        android:fontFamily="serif"
+        android:shadowColor="#7F000000"
+        android:shadowDx="-2"
+        android:shadowDy="-2"
+        android:shadowRadius="2"
+        android:text="Confirm"
+        android:textAllCaps="false"
+        android:textColor="@color/md_theme_dark_onPrimary"
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pattern_LockView"
+        app:layout_constraintVertical_bias="0.53"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Delete_lock_App"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/custtom_button"
+        android:fontFamily="serif"
+        android:shadowColor="#7F000000"
+        android:shadowDx="-2"
+        android:shadowDy="-2"
+        android:shadowRadius="2"
+        android:text="@string/unlock"
+        android:textAllCaps="false"
+        android:textColor="@color/md_theme_dark_onPrimary"
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.804"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pattern_LockView"
+        app:layout_constraintVertical_bias="0.53"
+        tools:ignore="MissingConstraints" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="186dp"
+        android:layout_height="178dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pattern_LockView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.08"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/lock_animation"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageBack"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/ic_backspace_24"
+        app:layout_constraintBottom_toTopOf="@+id/pattern_LockView"
+        app:layout_constraintEnd_toStartOf="@+id/animationView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.228"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="51dp"
+        android:text="App Lock"
+        android:shadowColor="@color/md_theme_dark_inverseOnSurface"
+        android:shadowDx="-2"
+        android:shadowDy="-2"
+        android:shadowRadius="2"
+        android:textColor="@color/md_theme_dark_onPrimary"
+
+        android:textAllCaps="false"
+        android:textSize="@dimen/_29sdp"
+        app:layout_constraintBottom_toTopOf="@+id/pattern_LockView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.401"
+        app:layout_constraintStart_toEndOf="@+id/imageBack"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

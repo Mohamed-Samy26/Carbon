@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/teal_200"
-    tools:context=".screens.status.AddTextStory">
+    tools:context="com.example.myapplication.screens.status.AddTextStoryActivity">
 
 
     <ImageButton

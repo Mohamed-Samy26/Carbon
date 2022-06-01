@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_10sdp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/group_image"
+            android:layout_width="@dimen/_75sdp"
+            android:layout_height="@dimen/_75sdp"
+            android:src="@drawable/user_img_foreground"
+            android:layout_gravity="center"
+            app:civ_border_width="@dimen/_1sdp"
+            android:foregroundGravity="center"/>
+        <EditText
+            android:id="@+id/group_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="Name"
+            android:textColorHint="@color/colorOnPrimary"
+            android:paddingHorizontal="@dimen/_15sdp"
+            />
+
+        <EditText
+            android:id="@+id/group_description"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="Description"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:textColorHint="@color/colorOnPrimary"
+            />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/create_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/create_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="create"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

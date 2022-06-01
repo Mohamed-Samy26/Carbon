@@ -7,48 +7,74 @@
     android:layout_marginTop="16dp">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_gchat_message_me"
+        android:id="@+id/card_userMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="#774df2"
-        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="@color/md_theme_light_secondaryContainer"
+        app:cardCornerRadius="18dp"
         app:cardElevation="0dp"
         app:cardPreventCornerOverlap="false"
-        app:cardUseCompatPadding="true"
+        app:cardUseCompatPadding="false"
         app:layout_constraintEnd_toEndOf="parent"
+        style="@style/Widget.Material3.CardView.Filled"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/layout_gchat_container_me"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/TVuser_msg"
+            <LinearLayout
+                android:id="@+id/layout_container_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:maxWidth="260dp"
-                android:paddingLeft="12dp"
-                android:paddingTop="8dp"
-                android:paddingRight="12dp"
-                android:text="This is a Message"
-                android:textColor="#ffffff"
-                android:textSize="16sp" />
-        </LinearLayout>
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
+                <TextView
+                    android:id="@+id/TVuser_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:maxWidth="260dp"
+                    android:textColor="@color/black"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="@dimen/_3sdp"
+                    android:paddingRight="12dp"
+                    android:text="This is a Message"
+                    android:textSize="16sp" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleX="-.6"
+                android:scaleY=".6"
+                android:layout_marginStart="@dimen/_2sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_container_user"
+                app:srcCompat="@drawable/ic_baseline_send_24"
+                app:tint="@color/md_theme_dark_secondary"/>
+
+            <TextView
+                android:id="@+id/TVuser_ts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3ssp"
+                android:layout_marginEnd="@dimen/_7ssp"
+                android:layout_marginTop="@dimen/_3ssp"
+                android:text="10:00"
+                android:textColor="@color/md_theme_light_secondary"
+                android:textSize="@dimen/_11sdp"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/layout_container_user" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/TVuser_ts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="10:00"
-        android:textColor="#C0C0C0"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@+id/card_gchat_message_me"
-        app:layout_constraintEnd_toStartOf="@+id/card_gchat_message_me" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

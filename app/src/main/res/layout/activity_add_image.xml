@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.ImageStoryDetailsFragment">
+    android:background="@color/statusbar">
 
     <ImageView
         android:id="@+id/storyImage"
@@ -19,17 +19,18 @@
     <EditText
         android:id="@+id/Idescription"
         android:layout_width="0dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="24dp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:layout_marginBottom="@dimen/_18sdp"
         android:background="@drawable/grey_btn"
         android:ems="10"
         android:hint="Description"
+        android:textStyle="bold"
         android:paddingLeft="@dimen/_12sdp"
         android:paddingRight="@dimen/_12sdp"
-        android:textColor="@color/gray"
-        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/addImageStoryToFireBase"
         app:layout_constraintHorizontal_bias="1.0"
@@ -40,9 +41,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/_12sdp"
-        app:tint="@color/design_default_color_on_primary"
-        android:layout_marginBottom="24dp"
+        app:tint="@color/lightgray"
+        android:layout_marginBottom="@dimen/_18sdp"
         android:src="@drawable/ic_baseline_send_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/md_theme_light_inversePrimary"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

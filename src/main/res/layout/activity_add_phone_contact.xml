@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:padding="1dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+        <EditText
+            android:id="@+id/add_phone_contact_display_name"
+            android:hint="@string/name"
+            android:lines="1"
+            android:paddingStart="@dimen/_16sdp"
+            android:layout_margin="@dimen/_16sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="name"
+            android:inputType="textAutoComplete"
+            tools:ignore="TextFields" />
+        <EditText
+            android:id="@+id/add_phone_contact_number"
+            android:hint="@string/phone"
+            android:layout_margin="@dimen/_16sdp"
+            android:inputType="phone"
+            android:paddingStart="@dimen/_16sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="phone" />
+
+        <Spinner
+            android:id="@+id/add_phone_contact_type"
+            android:layout_weight="1.3"
+            android:autofillHints="phone"
+            android:layout_marginStart="@dimen/_46sdp"
+            android:layout_marginEnd="@dimen/_46sdp"
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:spinnerMode="dropdown"/>
+    <Button
+        android:id="@+id/add_phone_contact_save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        android:text="@string/save_phone_contact"/>
+</LinearLayout>

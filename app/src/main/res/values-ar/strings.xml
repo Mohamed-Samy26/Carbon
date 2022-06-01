@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="tab_text_1">carbon</string>
-    <string name="tab_text_2">الحالات</string>
+    <string name="tab_text_1">المحادثات</string>
+    <string name="tab_text_2">القصص</string>
     <string name="tab_text_3">المجموعات</string>
     <string name="add_chat">إضافة محادثة</string>
-    <string name="save_phone_contact">حفظ الواجهة</string>
+    <string name="save_phone_contact">حفظ جهة الأتصال</string>
     <string name="name">الإسم</string>
     <string name="open_add">إضافة</string>
-    <string name="app_name">شاتي</string>
+    <string name="app_name">كاربون</string>
     <string name="phone">الهاتف</string>
     <string name="generateOTP">انشئ رمز OTP</string>
     <string name="OTP">OTP</string>
     <string name="verifyOTP">تأكيد رمز OTP</string>
     <string name="home">المنزل</string>
     <string name="logout">تسجيل الخروج</string>
-    <string name="goToHome">العوده الي المنزل</string>
+    <string name="goToHome">خروج</string>
     <string name="changeLanguage">تغيير اللغه</string>
     <string name="mode">الوضع الداكن</string>
+    <string name="app_lock">قفل التطبيق</string>
+    <string name="sign_out">تسجيل الخروج</string>
+    <string name="cancel">الغاء</string>
+    <string name="use_fingerprint">استخدم البصمة</string>
+    <string name="settings">الأعدادات</string>
+    <string name="verify_otp">تأكيد OTP</string>
+    <string name="verification_code">رقم التأكيد</string>
+    <string name="send_message">أرسل رسالة</string>
+    <string name="unlock">الغاء القفل</string>
+    <string name="register">التسجيل</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="description">الوصف</string>
+    <string name="profile">الصفحة الشخصية</string>
+    <string name="saveChanges">حفظ التغييرات</string>
 </resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/Theme.Material3.DayNight">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/md_theme_dark_secondaryContainer">
+<!--        android:background="#F2FDFF"-->
+
+        <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/current_user_profile_image"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_11sdp"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:src="@mipmap/logo"
+        app:civ_border_width="@dimen/_1sdp"
+        app:civ_border_color="#39000000"/>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_1sdp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="0dp"
+            android:lines="1"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="0dp"
+            android:padding="@dimen/_3sdp"
+            android:text="Name as it should."
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold"
+            android:id="@+id/name"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:layout_marginStart="@dimen/_9sdp"
+            android:layout_marginEnd="@dimen/_11sdp"
+            android:layout_marginBottom="@dimen/_11sdp"
+            android:layout_marginTop="0dp"
+            android:padding="@dimen/_3sdp"
+            android:textSize="@dimen/_12ssp"
+            android:text="@string/message_should_be_displayed_here"
+            android:id="@+id/msg" />
+    </LinearLayout></LinearLayout>
+</androidx.cardview.widget.CardView>

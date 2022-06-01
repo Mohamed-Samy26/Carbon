@@ -1,67 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--suppress AndroidUnresolvableTag -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_chat_room"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
     android:clickable="true"
-    style="@style/AppTheme">
+    style="@style/chat_room">
 
     <com.google.android.material.appbar.AppBarLayout
+        app:statusBarForeground="#47617a"
         android:id="@+id/chatBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/ThemeOverlay.Material3.BottomAppBar"
+        android:background="@color/md_theme_dark_secondary">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <com.google.android.material.imageview.ShapeableImageView
-
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/recImg"
                 android:layout_width="52dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_margin="12dp"
-                app:shapeAppearanceOverlay="@style/roundedImageView"
-                app:srcCompat="@drawable/ic_launcher_background"
-                android:id="@+id/recImg"/>
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/roundedImageView" />
 
             <TextView
                 android:id="@+id/TVname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
                 android:foregroundGravity="center_vertical"
                 android:gravity="center_vertical"
                 android:text="TextView"
-                android:textColor="#8C9EFF"
-                android:textSize="22sp" />
+                android:textColor="@color/md_theme_dark_onPrimary"
+                android:textSize="22sp"
+                app:layout_constraintStart_toEndOf="@+id/recImg"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <FrameLayout
+            <ImageButton
+                android:id="@+id/vidCall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:foregroundGravity="center"
-                android:layout_marginStart="@dimen/_130sdp">
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="video call"
+                android:foregroundGravity="center_vertical"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/presence_video_online" />
 
-                <ImageButton
-                    android:id="@+id/vidCall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:foregroundGravity="center_vertical"
-                    android:padding="@dimen/_12ssp"
-                    app:srcCompat="@android:drawable/presence_video_busy"
-                    android:background="#8a3fff"
-                    android:contentDescription="video call" />
-            </FrameLayout>
+            <TextView
+                android:id="@+id/lastSeen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorOnPrimary"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="5dp"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toEndOf="@+id/recImg"
+                app:layout_constraintTop_toBottomOf="@+id/TVname"
+                tools:text="Last seen" />
 
-        </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -77,12 +99,12 @@
             android:id="@+id/recycler_chat"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            app:layout_constrainedHeight="true" />
+            app:layout_constrainedHeight="true"
+            android:elevation="0dp" />
     </FrameLayout>
 
     <TextView
-        android:id="@+id/text_gchat_indicator"
+        android:id="@+id/text_chat_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -93,43 +115,71 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#e0e0e0"
-        app:layout_constraintBottom_toTopOf="@+id/ETchatbox" />
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/ETchatbox"
+        android:visibility="invisible"/>
 
     <RelativeLayout
         android:id="@+id/ETchatbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        android:elevation="0dp">
 
 
         <EditText
             android:id="@+id/msgTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="4dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="13dp"
             android:layout_toStartOf="@+id/sendBtn"
-            android:background="@android:color/transparent"
-            android:hint="Enter Message"
-            android:inputType="text"
+            android:background="@drawable/grey_btn"
+            android:elevation="@dimen/_7ssp"
+            android:ems="10"
+            android:hint="@string/send_message"
             android:maxLines="6"
             android:minHeight="50dp"
-            android:textColor="#333333"
+            android:paddingLeft="@dimen/_12sdp"
+            android:paddingRight="@dimen/_12sdp"
+            android:textColor="@color/black"
             android:textColorHint="#757575"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
             tools:ignore="Autofill" />
 
-        <Button
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/sendBtn"
+            style="@style/Widget.Material3.FloatingActionButton.Secondary"
             android:layout_width="wrap_content"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:background="?attr/selectableItemBackground"
-            android:text="Send"
-            android:textColor="#00838F" />
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/md_theme_dark_secondary"
+            android:contentDescription="Send message"
+            android:src="@drawable/ic_baseline_send_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/design_default_color_on_primary" />
+
+        <Chronometer
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="55dp"
+            android:layout_toStartOf="@+id/sendBtn"
+            android:id="@+id/timer"
+            android:elevation="@dimen/_100sdp"
+            android:visibility="invisible"/>
 
     </RelativeLayout>
 

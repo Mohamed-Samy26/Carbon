@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_text_1">carbon</string>
+    <string name="tab_text_2">الحالات</string>
+    <string name="tab_text_3">المجموعات</string>
+    <string name="add_chat">إضافة محادثة</string>
+    <string name="save_phone_contact">حفظ الواجهة</string>
+    <string name="name">الإسم</string>
+    <string name="open_add">إضافة</string>
+    <string name="app_name">شاتي</string>
+    <string name="phone">الهاتف</string>
+    <string name="generateOTP">انشئ رمز OTP</string>
+    <string name="OTP">OTP</string>
+    <string name="verifyOTP">تأكيد رمز OTP</string>
+    <string name="home">المنزل</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="goToHome">العوده الي المنزل</string>
+    <string name="changeLanguage">تغيير اللغه</string>
+    <string name="mode">الوضع الداكن</string>
+</resources>

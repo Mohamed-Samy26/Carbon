@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="message_should_be_displayed_here" translatable="false">Message should be displayed here</string>
-    <string name="app_name">carbon</string>
+    <string name="app_name">Carbon</string>
     <string name="tab_text_1">Chats</string>
     <string name="tab_text_2">Status</string>
     <string name="tab_text_3">Groups</string>
@@ -19,4 +19,19 @@
     <string name="goToHome">Home</string>
     <string name="changeLanguage">Language</string>
     <string name="mode">Dark Mode</string>
+    <string name="title_activity_maps" translatable="false">MapsActivity</string>
+    <string name="app_lock">App Lock</string>
+    <string name="sign_out">sign out</string>
+    <string name="cancel">Cancel</string>
+    <string name="use_fingerprint">Use fingerprint</string>
+    <string name="settings">Settings</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="verification_code">Verification code</string>
+    <string name="send_message">Send Message</string>
+    <string name="unlock">Unlock</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="description">Description</string>
+    <string name="profile">Profile</string>
+    <string name="saveChanges">Save Changes</string>
 </resources>

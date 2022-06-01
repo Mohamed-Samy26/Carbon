@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.datastructures.chatty.ui.main.Home">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MyApplication.AppBarOverlay">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/current_user_profile_image"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:layout_marginStart="@dimen/_11sdp"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@mipmap/logo"
+                app:civ_border_width="@dimen/_1sdp"
+                app:civ_border_color="#FF000000"/>
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="@dimen/_20ssp"
+                android:minHeight="?actionBarSize"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/app_name"
+                android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/settings_button"
+                    android:onClick="goToSettings"
+                    android:text="settings"
+                    android:layout_marginStart="@dimen/_80sdp"
+                    />
+
+        </LinearLayout>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

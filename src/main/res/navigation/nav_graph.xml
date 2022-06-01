@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/storiesFragment">
+
+    <fragment
+        android:id="@+id/storyDetailsFragment"
+        android:name="com.datastructures.chatty.screens.StoriesFragment"
+        android:label="fragment_story_details"
+        tools:layout="@layout/fragment_story_text_details" />
+    <fragment
+        android:id="@+id/storiesFragment"
+        android:name="com.datastructures.chatty.screens.status.StoriesFragment"
+        android:label="fragment_stories"
+        tools:layout="@layout/fragment_stories" >
+        <action
+            android:id="@+id/action_storiesFragment_to_storyDetailsFragment"
+            app:destination="@id/storyDetailsFragment" />
+    </fragment>
+</navigation>
