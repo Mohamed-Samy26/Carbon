@@ -1,13 +1,12 @@
+# Carbon
 
-![Logo](carbon_gif_logo.gif)
+<p align="center">
+<img src="screenshots/carbon_gif_logo.gif" alt="App Screenshot" width="300"/>
+ </em>
+ <p align="center"><em>Android live chat application, Project for the data structures course. </em></p>
+ </p>
 
-
-# Carbon Chat App
-
- Android live chat application, Project for the data structures course .
-
-
-## Authors
+## Contributors
 
 - [@Mohamed-Samy26](https://github.com/Mohamed-Samy26) 
 - [@RedBiscuits](https://github.com/RedBiscuits)
@@ -17,104 +16,98 @@
 - [@OmarSherif2](https://github.com/OmarSherif2)
 
 
-
-
-
 ## Features
 
 - Splash Screen.
 - Phone Login and register.
 - Add/remove/create contacts.
 - One-to-One chat.
-- One-to-Group chat.
-- Stories images and text.
-- Audio Records.
+- Group chats.
+- Images and text stories.
+- Audio records.
 - Message encoding
 - Video/Audio calls.
 - Data privacy and withhold.
-- Profile edit and view.
+- View and edit profile.
 - Conference rooms with streaming,recording,voting and security features.
-- Settings activity with app lock(Pattern and Fingerprint).
+- Settings activity with app lock (Pattern and Fingerprint).
 - English and Arabic support.
-
-
-
 
 
 # In App Screenshots
 ## Splash screen
 
-<img src="screenshots/splash.png" alt="App Screenshot" width="300"/>
+<img src="screenshots/splash.png" alt="App Screenshot" width="200"/>
 <!-- ![App Screenshot](screenshots/splash.png) -->
 
 Animated app splash screen
 
 ## Registeration
 
-<img src="screenshots/register.png" alt="App Screenshot" width="300"/>
+<img src="screenshots/register.png" alt="App Screenshot" width="200"/>
 <!-- ![App Screenshot](screenshots/register.png) -->
 
 Registeration fragment
 
 ## Login
 
-<img src="screenshots/login.png" alt="App Screenshot" width="300"/>
+<img src="screenshots/login.png" alt="App Screenshot" width="200"/>
 <!-- ![App Screenshot](screenshots/login.png) -->
 
 Login fragment with OTP authentication
 
 ## Home
 
-<img src="screenshots/home.png" alt="App Screenshot" width="300"/>
+<img src="screenshots/home.png" alt="App Screenshot" width="200"/>
 <!-- ![App Screenshot](screenshots/home.png) -->
 
 Home screen with available chats and ability to add new contacts
 
 ## Chat Room
 
-<img src="screenshots/chatroom.png" alt="App Screenshot" width="300"/>
+<img src="screenshots/chatroom.png" alt="App Screenshot" width="200"/>
 <!-- ![App Screenshot](screenshots/chatroom.png) -->
 
 Chat Room with one to one chats , group chats and voice notes support
 
 ## Video call
 
-<img src="screenshots/videocall.png" alt="App Screenshot" width="300"/>
+<img src="screenshots/videocall.png" alt="App Screenshot" width="200"/>
 <!-- ![App Screenshot](screenshots/videocall.png) -->
 
 ## Video call options
 
-<img src="screenshots/videochat_options.png" alt="App Screenshot" width="300"/>
+<img src="screenshots/videochat_options.png" alt="App Screenshot" width="200"/>
 <!-- ![App Screenshot](screenshots/videochat_options.png) -->
 
 ## Floating window (PIP) videocall
 
-<img src="screenshots/in_app_videochat.png" alt="App Screenshot" width="300"/>
+<img src="screenshots/in_app_videochat.png" alt="App Screenshot" width="200"/>
 <!-- ![App Screenshot](screenshots/in_app_videochat.png) -->
 
 ## Stories
 
-<img src="screenshots/stories.png" alt="App Screenshot" width="300"/>
+<img src="screenshots/stories.png" alt="App Screenshot" width="200"/>
 <!-- ![App Screenshot](screenshots/stories.png) -->
 
 ## Profile
 
-<img src="screenshots/profile.png" alt="App Screenshot" width="300"/>
+<img src="screenshots/profile.png" alt="App Screenshot" width="200"/>
 <!-- ![App Screenshot](screenshots/profile.png) -->
 
 ## Private account
 
-<img src="screenshots/private_profile1_cleanup.png" alt="App Screenshot" width="300"/>
+<img src="screenshots/private_profile1_cleanup.png" alt="App Screenshot" width="200"/>
 <!-- ![App Screenshot](screenshots/private_profile1_cleanup.png) -->
 
 ## Setting applock
 
-<img src="screenshots/applock_insettings.png" alt="App Screenshot" width="300"/>
+<img src="screenshots/applock_insettings.png" alt="App Screenshot" width="200"/>
 <!-- ![App Screenshot](screenshots/applock_insettings.png) -->
 
 ## Applock
 
-<img src="screenshots/applock.png" alt="App Screenshot" width="300"/>
+<img src="screenshots/applock.png" alt="App Screenshot" width="200"/>
 <!-- ![App Screenshot](screenshots/applock.png) -->
 
 
@@ -125,10 +118,10 @@ Chat Room with one to one chats , group chats and voice notes support
 - Data binding
 - Kotlin coroutines
 ## Firebase
-- Firebase Cloud Firestore.
-- Firebase Realtime database.
-- Firebase Cloud Storage.
-- Firebase Phone Authentication.
+- Cloud Firestore.
+- Realtime database.
+- Cloud Storage.
+- Phone Authentication.
  
 ## WebRTC
 - Implemented by Jitsi SDK.
