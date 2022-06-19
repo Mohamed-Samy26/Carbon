@@ -3,7 +3,7 @@
 <p align="center">
 <img src="screenshots/carbon_gif_logo.gif" alt="App Screenshot" width="300"/>
  </em>
- <p align="center"><em>Android live chat application, Project for the data structures course. </em></p>
+ <p align="center"><em>Android live chat application. </em></p>
  </p>
 
 ## Contributors
